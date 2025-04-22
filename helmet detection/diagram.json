@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Dhruwank Vankawala",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -1.33, "left": -137.34, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 10.53,
+      "left": 42.93,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -32.17, "left": -7.33, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "lcd1:GND", "black", [ "h20.87", "v-103.94", "h7.33" ] ],
+    [ "vcc1:VCC", "lcd1:VCC", "red", [ "v56.53", "h3.9" ] ],
+    [ "esp:D22", "lcd1:SCL", "green", [ "h12.54", "v36.65" ] ],
+    [ "esp:D21", "lcd1:SDA", "magenta", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
